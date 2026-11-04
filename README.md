@@ -1,10 +1,5 @@
-<div align="center">
-
-<br />
-
-# 🌒 Sham — VS Code Theme
-
-**A collection of calm, hand-crafted dark themes built from reusable color palettes.**
+<h1 align="center">SHAM</h1>
+<h3 align="center">A VS Code theme inspired by Syrian new colors</h3><br>
 
 Seven variants, one philosophy: low-contrast comfort, vibrant-but-soft accents,
 and code that stays readable at 2 a.m.
@@ -31,15 +26,15 @@ and code that stays readable at 2 a.m.
 
 ## 🎨 Themes
 
-| Theme       | Vibe                | Background                                                                    | Accent                                                                |
-| ----------- | ------------------- | ----------------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| **Sham Shahin**   | deep teal & gold    | `#031c1f` | `#fde68a` |
-| **Sham Shahin2**  | Shahin, classic tokens | `#031c1f` | `#fde68a` |
-| **Sham Shift**    | slate night         | `#111827` | `#57a7e6` |
-| **Sham Darko**    | near-black & soft   | `#0e151a` | `#05b7b0` |
-| **Sham Vali**     | clean slate         | `#111827` | `#57a7e6` |
-| **Sham Glass**    | muted & glassy      | `#161b21` | `#4a78b4` |
-| **Sham Glass2**   | softer glass tone   | `#161b21` | `#38bdf8` |
+| Theme            | Vibe                   | Background | Accent    |
+| ---------------- | ---------------------- | ---------- | --------- |
+| **Sham Shahin**  | deep teal & gold       | `#031c1f`  | `#fde68a` |
+| **Sham Shahin2** | Shahin, classic tokens | `#031c1f`  | `#fde68a` |
+| **Sham Shift**   | slate night            | `#111827`  | `#57a7e6` |
+| **Sham Darko**   | near-black & soft      | `#0e151a`  | `#05b7b0` |
+| **Sham Vali**    | clean slate            | `#111827`  | `#57a7e6` |
+| **Sham Glass**   | muted & glassy         | `#161b21`  | `#4a78b4` |
+| **Sham Glass2**  | softer glass tone      | `#161b21`  | `#38bdf8` |
 
 > All themes ship as `vs-dark`.
 
@@ -114,6 +109,12 @@ bun run update-color-keys
 
 ```bash
 bun run check
+```
+
+### Publish
+
+```bash
+npx vsce publish
 ```
 
 ## 📁 Project structure
