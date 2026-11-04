@@ -2,7 +2,7 @@
   "name": "sham",
   "displayName": "Sham",
   "description": "A collection of calm, hand-crafted dark VS Code themes built from reusable color palettes — 7 variants, from deep teal to soft glass.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "lorensosman",
   "license": "MIT",
   "engines": {
