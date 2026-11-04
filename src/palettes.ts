@@ -49,6 +49,7 @@ export const palettes: Record<PaletteName, TColorPalette> = {
     name: "shahin",
     transparent: "#00000000",
     gold: "#b9a77977",
+    gray: "#a7b2b8",
     white: "#ffffff",
     yellow: "#e9c965",
     yellowBright: "#fde68a",

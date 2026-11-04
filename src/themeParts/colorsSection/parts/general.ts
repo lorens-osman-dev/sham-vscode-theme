@@ -30,11 +30,23 @@ export default function general(palette: TColorPalette): TThemeColorMap {
     return {
       ...obj,
       "modernPanel.border": palette.gold,
+      // activity bar
       "modernActivityBar.background": palette.gold,
+      "activityBar.background": palette.gold,
+
       "modernActivityBarItem.hoverBackground": palette.BackgroundSecond,
+      "activityBar.foreground": palette.gray,
+
+      "modernActivityBarItem.activeForeground": palette.gray,
+
+      "activityBar.inactiveForeground": palette.BackgroundSecond,
+
       "activityBar.activeBackground": palette.BackgroundSecond,
       focusBorder: palette.gold,
       "list.hoverBackground": palette.gold,
+      "tab.activeBorderTop": palette.gold,
+      "tab.hoverBackground": palette.gold,
+      "modernTab.hoverBackground": palette.gold,
     };
   }
   return obj;

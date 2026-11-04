@@ -8,9 +8,9 @@
     "titleBar.inactiveBackground": "#031c1f",
     "titleBar.inactiveForeground": "#cccccc99",
     "titleBar.border": "#00000000",
-    "activityBar.foreground": "#34d399",
-    "activityBar.background": "#031c1f",
-    "activityBar.inactiveForeground": "#ffffff66",
+    "activityBar.foreground": "#a7b2b8",
+    "activityBar.background": "#b9a77977",
+    "activityBar.inactiveForeground": "#0a2426",
     "activityBarBadge.foreground": "#031c1f",
     "activityBarBadge.background": "#e9c965",
     "activityBar.border": "#00000000",
@@ -200,10 +200,10 @@
     "tab.border": "#031c1f",
     "tab.activeBackground": "#031c1f",
     "tab.activeBorder": "#00000000",
-    "tab.activeBorderTop": "#34d399",
+    "tab.activeBorderTop": "#b9a77977",
     "tab.inactiveBackground": "#0a2426",
     "tab.inactiveForeground": "#ffffff80",
-    "tab.hoverBackground": "#031c1f",
+    "tab.hoverBackground": "#b9a77977",
     "tab.hoverBorder": "#00000000",
     "editorGroup.border": "#444444",
     "panel.background": "#031c1f",
@@ -264,7 +264,9 @@
     "quickInput.background": "#0a2426",
     "modernPanel.border": "#b9a77977",
     "modernActivityBar.background": "#b9a77977",
-    "modernActivityBarItem.hoverBackground": "#0a2426"
+    "modernActivityBarItem.hoverBackground": "#0a2426",
+    "modernActivityBarItem.activeForeground": "#a7b2b8",
+    "modernTab.hoverBackground": "#b9a77977"
   },
   "tokenColors": [
     {
