@@ -42,27 +42,30 @@ and code that stays readable at 2 a.m.
 
 ## 📦 Install
 
-### From the Marketplace
-
-1. Open **Extensions** in VS Code (`Ctrl+Shift+X` / `⌘+Shift+X`).
-2. Search for **Sham**.
-3. Install, then open the Command Palette (`Ctrl+K Ctrl+T` / `⌘+K ⌘+T`) and pick your favorite **Sham** theme.
-
-### From a `.vsix`
+### One-line install (script)
 
 ```bash
-code --install-extension sham-1.0.0.vsix
+curl -fsSL https://raw.githubusercontent.com/lorens-osman-dev/sham-vscode-theme/master/scripts/downloadAndInstall.sh | bash
 ```
 
-### From source
+### Install manually
 
-```bash
-git clone https://github.com/lorens-osman-dev/sham-vscode-theme
-cd sham-vscode-theme
-bun install
-bun run vsce           # builds the theme and packages sham-<version>.vsix
-code --install-extension sham-1.0.0.vsix
-```
+Grab the latest `.vsix` from the
+[releases page](https://github.com/lorens-osman-dev/sham-vscode-theme/releases),
+then use option A or B .
+
+- **Option A — the command line:**
+
+  ```bash
+  code --install-extension sham-1.0.0.vsix
+  ```
+
+- **Option B — from inside VS Code:**
+
+  1. Open the **Extensions** view (`Ctrl+Shift+X` / `⌘+Shift+X`).
+  2. Click the **⋯** (more actions) menu in the top-right of the panel.
+  3. Choose **Install from VSIX…**
+  4. Browse to the downloaded `sham-1.0.0.vsix` and confirm.
 
 ## 🛠 Development
 
