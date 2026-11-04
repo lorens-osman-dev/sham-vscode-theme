@@ -1,7 +1,7 @@
 <h1 align="center">SHAM</h1>
 <h3 align="center">A VS Code theme inspired by Syrian new colors</h3><br>
 
-<p align="center"> <img src="assets/shame-icon@4.png" style="height: 200px !important;width: 200px !important;" > </p>
+<p align="center"> <img src="assets/shame-icon4x.png" style="height: 200px !important;width: 200px !important;" > </p>
 
 Seven variants, one philosophy: low-contrast comfort, vibrant-but-soft accents,
 and code that stays readable at 2 a.m.
