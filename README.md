@@ -48,6 +48,11 @@ and code that stays readable at 2 a.m.
 curl -fsSL https://raw.githubusercontent.com/lorens-osman-dev/sham-vscode-theme/master/scripts/downloadAndInstall.sh | bash
 ```
 
+> 🚀 Releases are automated: pushing a version tag (`git tag v1.2.3 && git push origin v1.2.3`)
+> makes [GitHub Actions](.github/workflows/release.yml) build the theme, package the
+> `.vsix`, verify the tag matches `package.json`, and attach it to a GitHub release —
+> which is what the script above downloads.
+
 ### Install manually
 
 Grab the latest `.vsix` from the
