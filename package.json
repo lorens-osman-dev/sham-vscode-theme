@@ -1,6 +1,6 @@
 {
-  "name": "night",
-  "displayName": "Night",
+  "name": "sham",
+  "displayName": "Sham",
   "description": "",
   "version": "0.0.1",
   "engines": {
@@ -12,44 +12,44 @@
   "contributes": {
     "themes": [
       {
-        "label": "Night Vali",
+        "label": "Sham Shahin",
         "uiTheme": "vs-dark",
-        "path": "./themes/night-vali-theme.json"
+        "path": "./themes/sham-shahin-theme.json"
       },
       {
-        "label": "Night Shift",
+        "label": "Sham Shahin2",
         "uiTheme": "vs-dark",
-        "path": "./themes/night-shift-theme.json"
+        "path": "./themes/sham-shahin2-theme.json"
       },
       {
-        "label": "Night Glass",
+        "label": "Sham Shift",
         "uiTheme": "vs-dark",
-        "path": "./themes/night-glass-theme.json"
+        "path": "./themes/sham-shift-theme.json"
       },
       {
-        "label": "Night Glass2",
+        "label": "Sham Darko",
         "uiTheme": "vs-dark",
-        "path": "./themes/night-glass2-theme.json"
+        "path": "./themes/sham-darko-theme.json"
       },
       {
-        "label": "Night Shahin",
+        "label": "Sham Vali",
         "uiTheme": "vs-dark",
-        "path": "./themes/night-shahin-theme.json"
+        "path": "./themes/sham-vali-theme.json"
       },
       {
-        "label": "Night Shahin2",
+        "label": "Sham Glass",
         "uiTheme": "vs-dark",
-        "path": "./themes/night-shahin2-theme.json"
+        "path": "./themes/sham-glass-theme.json"
       },
       {
-        "label": "Night Darko",
+        "label": "Sham Glass2",
         "uiTheme": "vs-dark",
-        "path": "./themes/night-darko-theme.json"
+        "path": "./themes/sham-glass2-theme.json"
       },
       {
-        "label": "Night Test",
+        "label": "Sham Test",
         "uiTheme": "vs-dark",
-        "path": "./themes/night-test-theme.json"
+        "path": "./themes/sham-test-theme.json"
       }
     ]
   },
