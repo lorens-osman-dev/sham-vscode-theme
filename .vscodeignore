@@ -2,3 +2,16 @@
 .vscode-test/**
 .gitignore
 vsc-extension-quickstart.md
+
+# dev-only sources — the packaged theme only needs the generated JSON
+src/**
+scripts/**
+.husky/**
+commitlint.config.js
+tsconfig.json
+tsconfig.check.json
+bun.lock
+
+# heavy assets not needed inside the extension
+assets/Image.jpg
+assets/shame-theme-lunacy.free

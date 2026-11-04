@@ -1,74 +1,138 @@
-# Night VS Code Theme
+<div align="center">
 
-This project generates a VS Code theme from palette definitions in `src/palettes.ts`.
+<br />
 
-## Change colors in `src/palettes.ts`
+# 🌒 Sham — VS Code Theme
 
-Open `src/palettes.ts` and edit any color value. For example:
+**A collection of calm, hand-crafted dark themes built from reusable color palettes.**
+
+Seven variants, one philosophy: low-contrast comfort, vibrant-but-soft accents,
+and code that stays readable at 2 a.m.
+
+[![Version](https://img.shields.io/badge/version-1.0.0-111827?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=lorensosman.sham)
+[![VS Code](https://img.shields.io/badge/VS_Code-^1.98.0-0078d7?logo=visualstudiocode&logoColor=white&style=flat-square)](https://code.visualstudio.com)
+[![License: MIT](https://img.shields.io/badge/license-MIT-6bb471?style=flat-square)](LICENSE)
+[![Themes](https://img.shields.io/badge/themes-7-c084fc?style=flat-square)](#-themes)
+
+<br />
+
+<img src="assets/Image.jpg" alt="Sham theme preview" width="100%" />
+
+<br />
+
+</div>
+
+## ✨ Highlights
+
+- 🎨 **Palette-driven** — every theme is generated from a single color palette; change one hex value and the whole UI follows.
+- 🔤 **One grammar, tokenColor sets** — original and test token styles share the same well-organized color sections (editor, sidebar, terminal, git decorations…).
+- 🍃 **Calm by default** — muted backgrounds (`#111827`, `#0e151a`…) with carefully chosen accents.
+- 🛠 **Typed & autocomplete-friendly** — only real VS Code color keys are allowed, thanks to a generated key list.
+
+## 🎨 Themes
+
+| Theme       | Vibe                | Background                                                                    | Accent                                                                |
+| ----------- | ------------------- | ----------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| **Sham Shahin**   | deep teal & gold    | `#031c1f` | `#fde68a` |
+| **Sham Shahin2**  | Shahin, classic tokens | `#031c1f` | `#fde68a` |
+| **Sham Shift**    | slate night         | `#111827` | `#57a7e6` |
+| **Sham Darko**    | near-black & soft   | `#0e151a` | `#05b7b0` |
+| **Sham Vali**     | clean slate         | `#111827` | `#57a7e6` |
+| **Sham Glass**    | muted & glassy      | `#161b21` | `#4a78b4` |
+| **Sham Glass2**   | softer glass tone   | `#161b21` | `#38bdf8` |
+
+> All themes ship as `vs-dark`.
+
+## 📦 Install
+
+### From the Marketplace
+
+1. Open **Extensions** in VS Code (`Ctrl+Shift+X` / `⌘+Shift+X`).
+2. Search for **Sham**.
+3. Install, then open the Command Palette (`Ctrl+K Ctrl+T` / `⌘+K ⌘+T`) and pick your favorite **Sham** theme.
+
+### From a `.vsix`
+
+```bash
+code --install-extension sham-1.0.0.vsix
+```
+
+### From source
+
+```bash
+git clone https://github.com/lorens-osman-dev/sham-vscode-theme
+cd sham-vscode-theme
+bun install
+bun run vsce           # builds the theme and packages sham-<version>.vsix
+code --install-extension sham-1.0.0.vsix
+```
+
+## 🛠 Development
+
+### Edit colors without touching JSON
+
+All palettes live in [`src/palettes.ts`](src/palettes.ts):
 
 ```ts
-export const palettes: { [key: string]: TColorPalette } = {
+export const palettes: Record<PaletteName, TColorPalette> = {
   base: {
     background: "#111827",
     foreground: "#cbd5e1",
     blue: "#38bdf8",
     red: "#f87171",
-    green: "#34d399",
+    // ...
   },
 };
 ```
 
-To change the theme accent color, update a palette entry like this:
-
-```ts
-blue: "#4ea1ff",
-background: "#0f172a",
-```
-
-When you save the file, the watcher regenerates the theme JSON files automatically.
-
-## Run the theme watcher
-
-From the project root:
+Keep the watcher running — it regenerates `themes/*.json` and syncs the
+`contributes.themes` section of `package.json` every time you save:
 
 ```bash
 bun run watch
 ```
 
-This runs the watcher script and rebuilds the theme output whenever files change.
+Add or remove a theme in [`src/index.ts`](src/index.ts) and the manifest updates automatically.
 
-## Debug / preview the extension
+### Preview in a debug instance
 
-In VS Code:
+1. Open the **Run and Debug** panel.
+2. Select the extension launch config.
+3. Press `F5` — the theme rebuilds in the background while you test.
 
-1. Open the Run and Debug panel.
-2. Select the launch config for the extension.
-3. Press `F5`.
+### Refresh VS Code color keys
 
-The launch configuration uses the `bun: watch` task, so the theme rebuilds in the background while you test the extension.
-If you close the VS Code debug instance, be sure to close its debug terminal as well. because i you opened a new VS Code debug instance on previous terminal it will disappears.
-
-The watcher also synchronizes the `contributes.themes` entries in `package.json` from the theme definitions in `src/index.ts`. Add or remove a theme in that list and the manifest updates automatically.
-
-## Update the color key types
-
-The theme parts in `src/themeParts/colorsSection/` use the `TThemeColorMap` type, which only accepts real VS Code theme color keys (e.g. `activityBar.background`, `titleBar.border`) and gives you autocomplete for them while editing.
-
-That key list is generated from VS Code's own color registry and stored in `src/types/vscodeColorKeys.d.ts`. When you update the `engines.vscode` version in `package.json` (or whenever you want to pick up recently added color keys), regenerate it from the project root:
+`src/types/vscodeColorKeys.d.ts` contains every valid theme color key for the
+current `engines.vscode` version. After bumping the engine version — or if
+TypeScript flags a key that VS Code accepts — regenerate it:
 
 ```bash
 bun run update-color-keys
 ```
 
-This overwrites `src/types/vscodeColorKeys.d.ts` with the latest list. If VS Code reports a color key as valid but TypeScript flags it, run this command again to refresh the list.
+### Checks
 
-## Output files
+```bash
+bun run check
+```
 
-The generated theme files are written to:
+## 📁 Project structure
 
-- `themes/night-vali-theme.json`
-- `themes/night-shift-theme.json`
-- `themes/night-glass-theme.json`
-- `themes/night-glass2-theme.json`
+```
+src/
+├── index.ts                  # theme registry — the source of truth
+├── palettes.ts               # all color palettes
+├── themeClass.ts             # assembles colors + tokens into a theme
+├── themeParts/
+│   ├── colorsSection/        # workbench colors (activity bar, tabs, terminal…)
+│   └── tokenColorsSection/   # syntax/token colors per language family
+├── templates/                # language sample files for visual testing
+├── types/                    # generated key list + palette types
+└── util/                     # JSON writing & manifest syncing
+themes/                      # generated theme JSON (the shipped artifact)
+assets/                      # icon & preview images
+```
 
-If you want a different color palette, edit the values in `src/palettes.ts` and then run or keep the watcher active while debugging.
+## 📝 License
+
+[MIT](LICENSE) © lorensosman

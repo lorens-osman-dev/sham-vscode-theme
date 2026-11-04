@@ -4,7 +4,7 @@
   "workspaces": {
     "": {
       "name": "night",
-      "dependencies": {
+      "devDependencies": {
         "@commitlint/cli": "^19.8.0",
         "@commitlint/config-conventional": "^19.8.0",
         "@types/vscode": "^1.98.0",
