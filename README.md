@@ -74,75 +74,17 @@ then use option A or B .
 
 ## 🛠 Development
 
-### Edit colors without touching JSON
+> 📘 Full guide in **[DEVELOPMENT.md](DEVELOPMENT.md)** — including a
+> command-by-command walkthrough from "I made a change" all the way
+> to _release + Marketplace publish_, plus troubleshooting.
 
-All palettes live in [`src/palettes.ts`](src/palettes.ts):
+Quick reference:
 
-```ts
-export const palettes: Record<PaletteName, TColorPalette> = {
-  base: {
-    background: "#111827",
-    foreground: "#cbd5e1",
-    blue: "#38bdf8",
-    red: "#f87171",
-    // ...
-  },
-};
-```
-
-Keep the watcher running — it regenerates `themes/*.json` and syncs the
-`contributes.themes` section of `package.json` every time you save:
-
-```bash
-bun run watch
-```
-
-Add or remove a theme in [`src/index.ts`](src/index.ts) and the manifest updates automatically.
-
-### Preview in a debug instance
-
-1. Open the **Run and Debug** panel.
-2. Select the extension launch config.
-3. Press `F5` — the theme rebuilds in the background while you test.
-
-### Refresh VS Code color keys
-
-`src/types/vscodeColorKeys.d.ts` contains every valid theme color key for the
-current `engines.vscode` version. After bumping the engine version — or if
-TypeScript flags a key that VS Code accepts — regenerate it:
-
-```bash
-bun run update-color-keys
-```
-
-### Checks
-
-```bash
-bun run check
-```
-
-### Publish
-
-```bash
-npx vsce publish
-```
-
-## 📁 Project structure
-
-```
-src/
-├── index.ts                  # theme registry — the source of truth
-├── palettes.ts               # all color palettes
-├── themeClass.ts             # assembles colors + tokens into a theme
-├── themeParts/
-│   ├── colorsSection/        # workbench colors (activity bar, tabs, terminal…)
-│   └── tokenColorsSection/   # syntax/token colors per language family
-├── templates/                # language sample files for visual testing
-├── types/                    # generated key list + palette types
-└── util/                     # JSON writing & manifest syncing
-themes/                      # generated theme JSON (the shipped artifact)
-assets/                      # icon & preview images
-```
+- 🎨 Edit palettes in [`src/palettes.ts`](src/palettes.ts) — keep `bun run watch` running and it regenerates `themes/*.json` + `package.json` for you.
+- 🔍 Preview in a debug instance: open the **Run and Debug** panel → `F5`.
+- ✅ Type check before committing: `bun run check` (also `bun run update-color-keys` when the VS Code engine version changes).
+- 🏷 Release flow: `npm version patch|minor` → `git push origin master --follow-tags` → GitHub Actions creates the GitHub release.
+- 🔑 Marketplace publish: automatic with the `VSCE_PAT` secret, or manually via `npx vsce publish`.
 
 ## 📝 License
 
